@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=BITRUBCOIN Core
+Comment=BITRUBCOIN P2P Cryptocurrency
+Comment[fr]=BITRUBCOIN, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=BITRUBCOIN, eşten eşe kriptografik sanal para birimi
+Exec=bitrubcoin-qt %u
+Terminal=false
+Type=Application
+Icon=bitrubcoin128
+MimeType=x-scheme-handler/bitrubcoin;
+Categories=Office;Finance;
+StartupWMClass=BitRubCoin-qt

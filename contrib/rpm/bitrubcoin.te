@@ -1,0 +1,81 @@
+policy_module(bitrubcoin, 1.100.1)
+
+########################################
+#
+# Declarations
+#
+
+type bitrubcoin_t;
+type bitrubcoin_exec_t;
+init_daemon_domain(bitrubcoin_t, bitrubcoin_exec_t)
+
+permissive bitrubcoin_t;
+
+type bitrubcoin_initrc_exec_t;
+init_script_file(bitrubcoin_initrc_exec_t)
+
+type bitrubcoin_conf_t;
+files_type(bitrubcoin_conf_t)
+
+type bitrubcoin_var_lib_t;
+files_type(bitrubcoin_var_lib_t)
+
+type bitrubcoin_var_run_t;
+files_type(bitrubcoin_var_run_t)
+
+type bitrubcoin_port_t;
+corenet_port(bitrubcoin_port_t)
+
+########################################
+#
+# bitrubcoin local policy
+#
+allow bitrubcoin_t self:process { fork };
+
+allow bitrubcoin_t self:fifo_file rw_fifo_file_perms;
+allow bitrubcoin_t self:unix_stream_socket create_stream_socket_perms;
+
+manage_dirs_pattern(bitrubcoin_t, bitrubcoin_conf_t, bitrubcoin_conf_t)
+manage_files_pattern(bitrubcoin_t, bitrubcoin_conf_t, bitrubcoin_conf_t)
+
+manage_dirs_pattern(bitrubcoin_t, bitrubcoin_var_lib_t, bitrubcoin_var_lib_t)
+manage_files_pattern(bitrubcoin_t, bitrubcoin_var_lib_t, bitrubcoin_var_lib_t)
+files_var_lib_filetrans(bitrubcoin_t, bitrubcoin_var_lib_t, { dir file })
+
+manage_dirs_pattern(bitrubcoin_t, bitrubcoin_var_run_t, bitrubcoin_var_run_t)
+manage_files_pattern(bitrubcoin_t, bitrubcoin_var_run_t, bitrubcoin_var_run_t)
+
+sysnet_dns_name_resolve(bitrubcoin_t)
+corenet_all_recvfrom_unlabeled(bitrubcoin_t)
+
+allow bitrubcoin_t self:tcp_socket create_stream_socket_perms;
+corenet_tcp_sendrecv_generic_if(bitrubcoin_t)
+corenet_tcp_sendrecv_generic_node(bitrubcoin_t)
+corenet_tcp_sendrecv_all_ports(bitrubcoin_t)
+corenet_tcp_bind_generic_node(bitrubcoin_t)
+
+gen_require(`
+    type bitrubcoin_port_t;
+')
+allow bitrubcoin_t bitrubcoin_port_t:tcp_socket name_bind;
+
+gen_require(`
+    type bitrubcoin_port_t;
+')
+allow bitrubcoin_t bitrubcoin_port_t:tcp_socket name_connect;
+
+domain_use_interactive_fds(bitrubcoin_t)
+
+files_read_etc_files(bitrubcoin_t)
+
+miscfiles_read_localization(bitrubcoin_t)
+
+sysnet_dns_name_resolve(bitrubcoin_t)
+
+allow bitrubcoin_t bitrubcoin_exec_t:file execute_no_trans;
+allow bitrubcoin_t self:process setsched;
+corecmd_exec_ls(bitrubcoin_t)
+corenet_tcp_connect_http_port(bitrubcoin_t)
+dev_read_urand(bitrubcoin_t)
+fs_getattr_xattr_fs(bitrubcoin_t)
+kernel_read_system_state(bitrubcoin_t)

@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 # Copyright (c) 2017 The Bitcoin Core developers
-# Copyright (c) 2020 The PIVX developers
+# Copyright (c) 2020 The BITRUBCOIN developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test debug logging."""
 
 import os
 
-from test_framework.test_framework import PivxTestFramework
+from test_framework.test_framework import BitRubCoinTestFramework
 from test_framework.test_node import ErrorMatch
 
 
-class LoggingTest(PivxTestFramework):
+class LoggingTest(BitRubCoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
         self.setup_clean_chain = True

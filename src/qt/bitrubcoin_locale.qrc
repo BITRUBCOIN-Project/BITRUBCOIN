@@ -1,0 +1,18 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="de">locale/bitrubcoin_de.qm</file>
+        <file alias="en">locale/bitrubcoin_en.qm</file>
+        <file alias="en_US">locale/bitrubcoin_en_US.qm</file>
+        <file alias="es">locale/bitrubcoin_es.qm</file>
+        <file alias="es_ES">locale/bitrubcoin_es_ES.qm</file>
+        <file alias="fr_FR">locale/bitrubcoin_fr_FR.qm</file>
+        <file alias="hr_HR">locale/bitrubcoin_hr_HR.qm</file>
+        <file alias="it">locale/bitrubcoin_it.qm</file>
+        <file alias="ko_KR">locale/bitrubcoin_ko_KR.qm</file>
+        <file alias="nl">locale/bitrubcoin_nl.qm</file>
+        <file alias="pl">locale/bitrubcoin_pl.qm</file>
+        <file alias="ru">locale/bitrubcoin_ru.qm</file>
+        <file alias="tr">locale/bitrubcoin_tr.qm</file>
+        <file alias="zh_CN">locale/bitrubcoin_zh_CN.qm</file>
+    </qresource>
+</RCC>

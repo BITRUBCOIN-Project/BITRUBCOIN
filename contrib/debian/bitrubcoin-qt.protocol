@@ -1,0 +1,11 @@
+[Protocol]
+exec=bitrubcoin-qt '%u'
+protocol=bitrubcoin
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

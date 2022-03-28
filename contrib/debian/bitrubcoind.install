@@ -1,0 +1,3 @@
+usr/local/bin/bitrubcoind usr/bin
+usr/local/bin/bitrubcoin-cli usr/bin
+debian/examples/bitrubcoin.conf etc/bitrubcoin

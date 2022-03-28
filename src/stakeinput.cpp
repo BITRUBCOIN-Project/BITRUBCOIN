@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2020 The PIVX developers
+// Copyright (c) 2017-2020 The BITRUBCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
@@ -19,10 +19,10 @@ static bool HasStakeMinAgeOrDepth(int nHeight, uint32_t nTime, const CBlockIndex
     return true;
 }
 
-CPivStake* CPivStake::NewPivStake(const CTxIn& txin, int nHeight, uint32_t nTime)
+CBrcStake* CBrcStake::NewBrcStake(const CTxIn& txin, int nHeight, uint32_t nTime)
 {
     if (txin.IsZerocoinSpend()) {
-        error("%s: unable to initialize CPivStake from zerocoin spend", __func__);
+        error("%s: unable to initialize CBrcStake from zerocoin spend", __func__);
         return nullptr;
     }
 
@@ -35,7 +35,7 @@ CPivStake* CPivStake::NewPivStake(const CTxIn& txin, int nHeight, uint32_t nTime
             return nullptr;
         }
         // All good
-        return new CPivStake(coin.out, txin.prevout, pindexFrom);
+        return new CBrcStake(coin.out, txin.prevout, pindexFrom);
     }
 
     // Otherwise find the previous transaction in database
@@ -60,38 +60,38 @@ CPivStake* CPivStake::NewPivStake(const CTxIn& txin, int nHeight, uint32_t nTime
         return nullptr;
     }
     // All good
-    return new CPivStake(txPrev->vout[txin.prevout.n], txin.prevout, pindexFrom);
+    return new CBrcStake(txPrev->vout[txin.prevout.n], txin.prevout, pindexFrom);
 }
 
-bool CPivStake::GetTxOutFrom(CTxOut& out) const
+bool CBrcStake::GetTxOutFrom(CTxOut& out) const
 {
     out = outputFrom;
     return true;
 }
 
-CTxIn CPivStake::GetTxIn() const
+CTxIn CBrcStake::GetTxIn() const
 {
     return CTxIn(outpointFrom.hash, outpointFrom.n);
 }
 
-CAmount CPivStake::GetValue() const
+CAmount CBrcStake::GetValue() const
 {
     return outputFrom.nValue;
 }
 
-CDataStream CPivStake::GetUniqueness() const
+CDataStream CBrcStake::GetUniqueness() const
 {
-    //The unique identifier for a PIV stake is the outpoint
+    //The unique identifier for a BRC stake is the outpoint
     CDataStream ss(SER_NETWORK, 0);
     ss << outpointFrom.n << outpointFrom.hash;
     return ss;
 }
 
 //The block that the UTXO was added to the chain
-const CBlockIndex* CPivStake::GetIndexFrom() const
+const CBlockIndex* CBrcStake::GetIndexFrom() const
 {
     // Sanity check, pindexFrom is set on the constructor.
-    if (!pindexFrom) throw std::runtime_error("CPivStake: uninitialized pindexFrom");
+    if (!pindexFrom) throw std::runtime_error("CBrcStake: uninitialized pindexFrom");
     return pindexFrom;
 }
 

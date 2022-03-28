@@ -1,0 +1,6 @@
+usr/local/bin/bitrubcoin-qt usr/bin
+share/pixmaps/bitrubcoin32.xpm usr/share/pixmaps
+share/pixmaps/bitrubcoin16.xpm usr/share/pixmaps
+share/pixmaps/bitrubcoin128.png usr/share/pixmaps
+debian/bitrubcoin-qt.desktop usr/share/applications
+debian/bitrubcoin-qt.protocol usr/share/kde4/services/

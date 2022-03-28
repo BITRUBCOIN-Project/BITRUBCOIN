@@ -1,9 +1,9 @@
-// Copyright (c) 2021 The PIVX developers
+// Copyright (c) 2021 The BITRUBCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_BLOCKSUTIL_H
-#define PIVX_BLOCKSUTIL_H
+#ifndef BITRUBCOIN_BLOCKSUTIL_H
+#define BITRUBCOIN_BLOCKSUTIL_H
 
 #include "primitives/block.h"
 #include <memory>
@@ -15,4 +15,4 @@ void ProcessBlockAndCheckRejectionReason(std::shared_ptr<CBlock>& pblock,
 
 CBlock getBlock13b8a();
 
-#endif //PIVX_BLOCKSUTIL_H
+#endif //BITRUBCOIN_BLOCKSUTIL_H

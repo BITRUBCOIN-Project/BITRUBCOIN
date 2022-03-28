@@ -1,9 +1,9 @@
-// Copyright (c) 2022 The PIVX developers
+// Copyright (c) 2022 The BITRUBCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_BLS_KEY_IO_H
-#define PIVX_BLS_KEY_IO_H
+#ifndef BITRUBCOIN_BLS_KEY_IO_H
+#define BITRUBCOIN_BLS_KEY_IO_H
 
 #include "optional.h"
 
@@ -21,4 +21,4 @@ namespace bls {
 
 } // end bls namespace
 
-#endif //PIVX_BLS_KEY_IO_H
+#endif //BITRUBCOIN_BLS_KEY_IO_H

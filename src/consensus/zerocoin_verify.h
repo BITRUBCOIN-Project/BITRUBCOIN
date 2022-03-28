@@ -1,9 +1,9 @@
-// Copyright (c) 2020 The PIVX developers
+// Copyright (c) 2020 The BITRUBCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_CONSENSUS_ZEROCOIN_VERIFY_H
-#define PIVX_CONSENSUS_ZEROCOIN_VERIFY_H
+#ifndef BITRUBCOIN_CONSENSUS_ZEROCOIN_VERIFY_H
+#define BITRUBCOIN_CONSENSUS_ZEROCOIN_VERIFY_H
 
 #include "consensus/consensus.h"
 #include "script/interpreter.h"
@@ -34,4 +34,4 @@ bool ParseAndValidateZerocoinSpends(const Consensus::Params& consensus,
                                     CValidationState& state,
                                     std::vector<std::pair<CBigNum, uint256>>& vSpendsRet);
 
-#endif //PIVX_CONSENSUS_ZEROCOIN_VERIFY_H
+#endif //BITRUBCOIN_CONSENSUS_ZEROCOIN_VERIFY_H

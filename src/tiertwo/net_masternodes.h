@@ -1,10 +1,10 @@
 // Copyright (c) 2020 The Dash developers
-// Copyright (c) 2021 The PIVX developers
+// Copyright (c) 2021 The BITRUBCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_NET_MASTERNODES_H
-#define PIVX_NET_MASTERNODES_H
+#ifndef BITRUBCOIN_NET_MASTERNODES_H
+#define BITRUBCOIN_NET_MASTERNODES_H
 
 #include "consensus/params.h"
 #include "sync.h"
@@ -88,4 +88,4 @@ private:
     void doMaintenance();
 };
 
-#endif //PIVX_NET_MASTERNODES_H
+#endif //BITRUBCOIN_NET_MASTERNODES_H

@@ -1,9 +1,9 @@
-// Copyright (c) 2021 The PIVX developers
+// Copyright (c) 2021 The BITRUBCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_BLOCKSTATECATCHER_H
-#define PIVX_BLOCKSTATECATCHER_H
+#ifndef BITRUBCOIN_BLOCKSTATECATCHER_H
+#define BITRUBCOIN_BLOCKSTATECATCHER_H
 
 #include "consensus/validation.h"
 #include "validationinterface.h"
@@ -34,4 +34,4 @@ protected:
     };
 };
 
-#endif //PIVX_BLOCKSTATECATCHER_H
+#endif //BITRUBCOIN_BLOCKSTATECATCHER_H
