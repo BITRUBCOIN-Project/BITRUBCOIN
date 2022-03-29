@@ -38,7 +38,7 @@ NO_ZMQ ?=
 NO_UPNP ?=
 NO_NATPMP ?=
 NO_RUST ?=
-FALLBACK_DOWNLOAD_PATH ?= https://depends.pivx.org
+FALLBACK_DOWNLOAD_PATH ?= https://github.com/BITRUBCOIN-Project/BITRUBCOIN/tree/master/depends
 
 BUILD = $(shell ./config.guess)
 HOST ?= $(BUILD)
